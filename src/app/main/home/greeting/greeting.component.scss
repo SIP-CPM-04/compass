@@ -1,7 +1,8 @@
-:host {
-  display: block;
-  .greeting-container {
-    // REMOVE WHEN FINISHING LAYOUT STYLES
-    border: 1px solid black;
-  }
+.greeting-container {
+  padding: 30px;
+  width: 55vw;
+  background-color: #E1FBF9;
+  color: #2DBDB1;
+  font-size: 40px;
+  font-family: 'Oxygen';
 }
