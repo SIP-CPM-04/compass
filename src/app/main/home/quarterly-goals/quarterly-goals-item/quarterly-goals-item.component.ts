@@ -12,6 +12,7 @@ import { BatchWriteService, BATCH_WRITE_SERVICE } from 'src/app/core/store/batch
   animations: QuarterlyGoalsItemAnimations,
   standalone: true,
   imports: [
+    
   ],
 })
 export class QuarterlyGoalsItemComponent implements OnInit {
