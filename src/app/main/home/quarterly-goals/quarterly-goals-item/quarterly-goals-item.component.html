@@ -1,3 +1,27 @@
 <div class="quarterly-goals-item-container">
-  quarterly-goals-item works!
+  <div class="goals">
+    <div class="tick-box">
+      <mat-checkbox class="check-box" (click)="checkGoal()"></mat-checkbox>
+    </div>
+    <div class="text-container">
+      <div class="top-bar">
+          <div class="goal-header">
+            @if (isChecked) {
+            <p><s>{{  goal()?.text  }}</s></p>
+            }
+            @else {
+            <p>{{  goal()?.text  }}</p>
+            }
+          </div>
+        </div>
+        <div class="bottom-bar">
+          <div class="hashtag">
+            <p>#{{ goal().hashtag.name }}</p>
+          </div>
+          <div class="progress">
+            <p>{{ goal().weeklyGoalsCompleted }}/{{ goal().weeklyGoalsTotal }}</p>
+          </div>
+        </div>
+    </div>
+  </div>
 </div>

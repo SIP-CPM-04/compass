@@ -1,7 +1,55 @@
 :host {
   display: block;
+  
   .quarterly-goals-item-container {
-    // REMOVE WHEN FINISHING LAYOUT STYLES
-    border: 1px solid black;
+    font-family: Oxygen;
+    font-weight: 400;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    padding:16px;
+    
+    .goals {
+      display:flex;
+      
+      .tick-box {
+        cursor: pointer;
+      }
+      
+      .text-container {
+        width: 299px;
+        display: flex;
+        flex-direction: column;
+        
+        .top-bar {
+          display: flex;
+          padding-top: 8px;
+          
+          .goal-header {
+            font-size: 16.25px;
+            color: #5A5A5A; 
+          }
+        }
+        
+        .bottom-bar {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          .hashtag {
+            
+            display: flex;
+            font-size: 15px;
+            color: #2DBDB1; 
+          }
+          
+          .progress {
+            display: flex;
+            font-size: 15px;
+            color: #5A5A5A;
+          }
+        }
+      }
+    }
   }
 }
