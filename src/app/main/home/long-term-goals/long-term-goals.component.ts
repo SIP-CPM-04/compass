@@ -3,6 +3,8 @@ import { LongTermGoalsAnimations } from './long-term-goals.animations';
 import { User } from 'src/app/core/store/user/user.model';
 import { AuthStore } from 'src/app/core/store/auth/auth.store';
 import { BatchWriteService, BATCH_WRITE_SERVICE } from 'src/app/core/store/batch-write.service';
+import { LongTermGoalsItemComponent } from './long-term-goals-item/long-term-goals-item.component';
+import { LongTermGoal } from '../../../core/store/long-term-goal/long-term-goal.model';
 
 @Component({
   selector: 'app-long-term-goals',
@@ -12,12 +14,19 @@ import { BatchWriteService, BATCH_WRITE_SERVICE } from 'src/app/core/store/batch
   animations: LongTermGoalsAnimations,
   standalone: true,
   imports: [
+    LongTermGoalsItemComponent
   ],
 })
 export class LongTermGoalsComponent implements OnInit {
   readonly authStore = inject(AuthStore);
   // --------------- INPUTS AND OUTPUTS ------------------
 
+  longTermGoal: LongTermGoal = {
+    __id: 'temp-id',
+    __userId: 'temp-user',
+    oneYear: 'Secure SWE or UX Engineering Internship',
+    fiveYear: 'Your five year goal here',
+  };
   /** The current signed in user. */
   currentUser: Signal<User> = this.authStore.user;
 

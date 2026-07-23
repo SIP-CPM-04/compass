@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-
 @use '@angular/material' as mat;
 @include mat.core();
 
@@ -25,8 +24,8 @@ html, body, app-root {
   height: 100%;
   box-sizing: border-box;
   padding: 0;
+  overflow-x: clip;
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 *, *:before, *:after {
