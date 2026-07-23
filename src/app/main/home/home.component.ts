@@ -4,7 +4,7 @@ import { User } from 'src/app/core/store/user/user.model';
 import { AuthStore } from 'src/app/core/store/auth/auth.store';
 import { BatchWriteService, BATCH_WRITE_SERVICE } from 'src/app/core/store/batch-write.service';
 import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
-
+import { LongTermGoalsComponent } from './long-term-goals/long-term-goals.component';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,6 +13,7 @@ import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
   standalone: true,
   animations: HomeAnimations,
   imports: [
+    LongTermGoalsComponent,
     NavbarComponent,
   ]
 })
