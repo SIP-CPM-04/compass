@@ -1,7 +1,19 @@
 :host {
-  display: block;
   .long-term-goals-header-container {
-    // REMOVE WHEN FINISHING LAYOUT STYLES
-    border: 1px solid black;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 27.5px;
+    display: inline-flex;
+    color: #4B5853;
+    padding: 32px 36px;
+    background-color: white;
+    .head {
+      height:29px;
+      width:290px;
+    }
+    .pencil {
+      height: 29px;
+      width: 29px;
+    }
   }
 }

@@ -23,13 +23,19 @@ export class GreetingComponent implements OnInit {
 
   // --------------- LOCAL UI STATE ----------------------
 
+  /** Loading icon. */
+  loading: WritableSignal<boolean> = signal(false);
+
   // --------------- COMPUTED DATA -----------------------
 
   // --------------- EVENT HANDLING ----------------------
 
   // --------------- OTHER -------------------------------
 
-  constructor() { }
+  constructor(
+    private injector: Injector,
+    @Inject(BATCH_WRITE_SERVICE) private batch: BatchWriteService,
+  ) { }
 
   // --------------- LOAD AND CLEANUP --------------------
   
