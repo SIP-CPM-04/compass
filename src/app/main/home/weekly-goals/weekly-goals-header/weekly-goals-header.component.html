@@ -1,3 +1,10 @@
-<div class="weekly-goals-header-container">
-  weekly-goals-header works!
+<div class="header-container">
+  <div class="title-section">
+    <h2 class="main-title">Weekly Goals</h2>
+    <span class="date-range">{{ dateRangeString }}</span>
+  </div>
+
+  <button class="edit-button" (click)="onEditClick()" aria-label="Edit weekly goals">
+    <img src="images/edit.svg" alt="Edit Icon" class="edit-icon" />
+  </button>
 </div>

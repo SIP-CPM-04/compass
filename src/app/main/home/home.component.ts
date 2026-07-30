@@ -7,6 +7,7 @@ import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
 import { QuarterlyGoalsComponent } from './quarterly-goals/quarterly-goals.component';
 import { LongTermGoalsComponent } from './long-term-goals/long-term-goals.component';
 import { GreetingComponent } from './greeting/greeting.component';
+import { WeeklyGoalsComponent } from './weekly-goals/weekly-goals.component';
 
 @Component({
   selector: 'app-home',
@@ -20,6 +21,7 @@ import { GreetingComponent } from './greeting/greeting.component';
     LongTermGoalsComponent,
     NavbarComponent,
     GreetingComponent,
+    WeeklyGoalsComponent
   ]
 })
 export class HomeComponent implements OnInit {

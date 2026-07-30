@@ -165,3 +165,17 @@ export function getStartOfWeek(date: Date): Date {
   d.setDate(d.getDate() - dayOfWeek);
   return d;
 }
+
+export function getWeeklyDateRange(): string {
+  const current = new Date();
+  
+  const start = new Date(current);
+  start.setDate(current.getDate() - current.getDay());
+  
+  const end = new Date(current);
+  end.setDate(current.getDate() + (6 - current.getDay()));
+  
+  const formatDate = (date: Date) => `${date.getMonth() + 1}/${date.getDate()}`;
+  
+  return `${formatDate(start)} - ${formatDate(end)}`;
+}
