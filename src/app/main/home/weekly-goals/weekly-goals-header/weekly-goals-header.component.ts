@@ -1,44 +1,33 @@
-import { Component, OnInit, ChangeDetectionStrategy, input, output, inject, WritableSignal, Signal, signal, computed, Inject, Injector } from '@angular/core';
-import { WeeklyGoalsHeaderAnimations } from './weekly-goals-header.animations';
-import { User } from 'src/app/core/store/user/user.model';
-import { AuthStore } from 'src/app/core/store/auth/auth.store';
-import { BatchWriteService, BATCH_WRITE_SERVICE } from 'src/app/core/store/batch-write.service';
+import { Component, OnInit, Output, EventEmitter, inject, ChangeDetectionStrategy, output } from '@angular/core';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import {getWeeklyDateRange} from 'src/app/core/utils/time.utils';
 
 @Component({
   selector: 'app-weekly-goals-header',
+  standalone: true,
+  imports: [MatSnackBarModule],
   templateUrl: './weekly-goals-header.component.html',
   styleUrls: ['./weekly-goals-header.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  animations: WeeklyGoalsHeaderAnimations,
-  standalone: true,
-  imports: [
-  ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WeeklyGoalsHeaderComponent implements OnInit {
-  readonly authStore = inject(AuthStore);
-  // --------------- INPUTS AND OUTPUTS ------------------
+  dateRangeString: string = '';
 
-  /** The current signed in user. */
-  currentUser: Signal<User> = this.authStore.user;
+  edit = output<boolean>();
 
-  // --------------- LOCAL UI STATE ----------------------
+  private snackBar = inject(MatSnackBar);
 
-  /** Loading icon. */
-  loading: WritableSignal<boolean> = signal(false);
-
-  // --------------- COMPUTED DATA -----------------------
-
-  // --------------- EVENT HANDLING ----------------------
-
-  // --------------- OTHER -------------------------------
-
-  constructor(
-    private injector: Injector,
-    @Inject(BATCH_WRITE_SERVICE) private batch: BatchWriteService,
-  ) { }
-
-  // --------------- LOAD AND CLEANUP --------------------
-  
   ngOnInit(): void {
+    this.dateRangeString = getWeeklyDateRange();
+  }
+
+  onEditClick(): void {
+    this.snackBar.open('Opening Weekly Goals editor...', 'Close', {
+      duration: 3000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom'
+    });
+    
+    this.edit.emit(true);
   }
 }
